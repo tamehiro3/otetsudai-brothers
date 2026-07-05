@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>おてつだいブラザーズ</title>
+  <meta name="description" content="兄弟2人のおてつだい×おこづかい管理アプリ。競争ではなく協力でボーナス！">
+  <meta name="theme-color" content="#ff9800">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="おてつだいB">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- はじめての設定 -->
+  <section id="scr-setup" class="screen">
+    <div class="wrap center">
+      <h1 class="logo">🧺 おてつだいブラザーズ</h1>
+      <p class="lead">兄弟2人の「できた！」を おこづかいに。<br>きそうより、きょうりょく！</p>
+      <div class="form">
+        <label>おにいちゃんの なまえ<input id="setup-ani" maxlength="10" placeholder="おにいちゃん"></label>
+        <label>おとうとの なまえ<input id="setup-otouto" maxlength="10" placeholder="おとうと"></label>
+        <button class="btn-ok big" data-act="setupStart">はじめる！</button>
+      </div>
+      <p class="p-note">なまえは あとから「おうちのひと画面 → せってい」で変えられます。データはこの端末の中だけに保存されます。</p>
+    </div>
+  </section>
+
+  <!-- だれ？（ホーム） -->
+  <section id="scr-select" class="screen">
+    <div class="wrap center">
+      <h1 class="logo">🧺 おてつだいブラザーズ</h1>
+      <p class="lead">きょうは だれが がんばる？</p>
+      <div id="sel-kids" class="kid-row"></div>
+      <div id="sel-family"></div>
+      <button class="parent-link" data-act="gotoParent">🔑 おうちのひとは こちら</button>
+    </div>
+  </section>
+
+  <!-- 子ども画面 -->
+  <section id="scr-child" class="screen">
+    <header class="topbar">
+      <button class="btn-back" data-act="backHome">←</button>
+      <span id="child-title" class="top-title"></span>
+      <span id="child-pt" class="top-pt"></span>
+    </header>
+    <div class="wrap" id="child-body"></div>
+    <nav class="bottom-nav" id="child-nav">
+      <button data-act="childTab" data-tab="today"><span>☀️</span>きょう</button>
+      <button data-act="childTab" data-tab="coop"><span>🤝</span>きょうりょく</button>
+      <button data-act="childTab" data-tab="stamps"><span>📖</span>スタンプ</button>
+      <button data-act="childTab" data-tab="bank"><span>💰</span>つうちょう</button>
+      <button data-act="childTab" data-tab="wish"><span>🎁</span>ほしいもの</button>
+    </nav>
+  </section>
+
+  <!-- 親ゲート -->
+  <section id="scr-gate" class="screen">
+    <div class="wrap center">
+      <h2>🔑 おうちのひと かくにん</h2>
+      <p class="lead">こたえが わかるかな？</p>
+      <div class="gate-q" id="gate-q"></div>
+      <input id="gate-in" type="number" inputmode="numeric" class="gate-in" placeholder="こたえ">
+      <div class="gate-btns">
+        <button class="btn-ok big" data-act="gateCheck">かくにん</button>
+        <button class="btn-sub" data-act="backHome">もどる</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 親画面 -->
+  <section id="scr-parent" class="screen">
+    <header class="topbar parent">
+      <button class="btn-back" data-act="backHome">←</button>
+      <span class="top-title">👨‍👩‍👦‍👦 おうちのひと画面</span>
+      <span id="parent-badge" class="badge-n"></span>
+    </header>
+    <div class="wrap" id="parent-body"></div>
+    <nav class="bottom-nav" id="parent-nav">
+      <button data-act="parentTab" data-tab="approve"><span>✅</span>しょうにん</button>
+      <button data-act="parentTab" data-tab="card"><span>💌</span>カード</button>
+      <button data-act="parentTab" data-tab="shop"><span>🛒</span>ショップ</button>
+      <button data-act="parentTab" data-tab="settings"><span>⚙️</span>せってい</button>
+    </nav>
+  </section>
+
+  <div id="toast"></div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
