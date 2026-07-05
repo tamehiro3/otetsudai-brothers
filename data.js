@@ -93,7 +93,7 @@ const FAMILY_EVENT_PT = 300;
 
 // ごほうびショップの初期ラインナップ（親画面で編集できる）
 const DEFAULT_SHOP = [
-  { id: "shop_game",  name: "ゲーム30ぷん けん",       emoji: "🎮", cost: 100 },
+  { id: "shop_game",  name: "ゲーム30ぷん けん",       emoji: "🎮", cost: 1000 },
   { id: "shop_snack", name: "すきな おかし 1つ",       emoji: "🍭", cost: 80 },
   { id: "shop_menu",  name: "ばんごはん リクエストけん", emoji: "🍛", cost: 150 },
   { id: "shop_movie", name: "かぞくで えいがの よる",   emoji: "🍿", cost: 300 },

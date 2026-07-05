@@ -45,6 +45,11 @@ function migrate(s) {
   out.kids = { ani: { ...defaultKid("ani"), ...(s.kids && s.kids.ani) }, otouto: { ...defaultKid("otouto"), ...(s.kids && s.kids.otouto) } };
   out.shared = { ...base.shared, ...(s.shared || {}) };
   out.settings = { ...DEFAULT_SETTINGS, ...(s.settings || {}) };
+  // 2026-07-05: ゲーム30分けんを100pt→1000ptに修正（保存済みデータも追従させる）
+  if (Array.isArray(out.shop)) {
+    const g = out.shop.find(i => i.id === "shop_game");
+    if (g && g.cost === 100) g.cost = 1000;
+  }
   return out;
 }
 
