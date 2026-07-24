@@ -1,5 +1,5 @@
 // Service Worker: オフラインでも使えるようにキャッシュする
-const CACHE = "otetsudai-brothers-v2";
+const CACHE = "otetsudai-brothers-v3";
 const ASSETS = [
   "./",
   "./index.html",

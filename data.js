@@ -15,6 +15,7 @@ const MISSION_GROUPS = [
 ];
 
 // rotation:true のミッションは「担当チェンジ制」（月水金/火木土で交代・日曜は協力デー）
+// assignee:"ani"/"otouto" のミッションは その子の固定担当（毎日表示）
 const MISSIONS = [
   // まいにち
   { id: "laundry_basket", group: "daily", name: "ぬいだものを せんたくかごへ", emoji: "🧺", pt: 10 },
@@ -27,7 +28,7 @@ const MISSIONS = [
   { id: "trash",          group: "weekly", name: "ゴミだしの じゅんび",     emoji: "🗑️", pt: 30 },
   { id: "desk_wipe",      group: "weekly", name: "つくえふき",             emoji: "🧽", pt: 20, rotation: true },
   { id: "pet",            group: "weekly", name: "ペットの おせわ",         emoji: "🐶", pt: 30 },
-  { id: "toilet",         group: "weekly", name: "トイレそうじ",           emoji: "🚽", pt: 50, rotation: true },
+  { id: "toilet",         group: "weekly", name: "トイレそうじ",           emoji: "🚽", pt: 50, assignee: "ani" },
   // ちょっとたいへん
   { id: "bath",           group: "hard", name: "おふろそうじ",               emoji: "🛁", pt: 70 },
   { id: "carry",          group: "hard", name: "かいものの にもつもち",       emoji: "🛍️", pt: 40 },

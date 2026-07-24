@@ -366,6 +366,7 @@ function renderChildToday(kid) {
 
   for (const g of MISSION_GROUPS) {
     const ms = MISSIONS.filter(m => m.group === g.id).filter(m => {
+      if (m.assignee) return m.assignee === kid; // 固定担当の子だけに表示（毎日）
       if (!m.rotation) return true;
       return rotationAssignee(m.id, ds) === kid; // 担当の子だけに表示、日曜は非表示
     });
@@ -374,7 +375,7 @@ function renderChildToday(kid) {
     html += ms.map(m => `
       <div class="mission">
         <span class="m-emoji">${m.emoji}</span>
-        <span class="m-name">${m.name}${m.rotation ? ' <span class="tag">とうばん</span>' : ""}</span>
+        <span class="m-name">${m.name}${m.rotation ? ' <span class="tag">とうばん</span>' : ""}${m.assignee ? ' <span class="tag">たんとう</span>' : ""}</span>
         <span class="m-pt">${m.pt}pt</span>
         ${missionBtn(kid, keyMission(m.id), { act: "doMission", id: m.id })}
       </div>`).join("");
@@ -594,7 +595,7 @@ function renderParentSettings() {
           <option ${s.payday === "げつまつ" ? "selected" : ""}>げつまつ</option>
         </select></label>
       <label><input type="checkbox" id="set-flip" ${s.rotationFlip ? "checked" : ""}> 担当ローテーションを入れ替える
-        <span class="p-note">OFF：月水金=兄がトイレ掃除・弟が机ふき／火木土は交代。ON で逆になります。日曜は協力デー。</span></label>
+        <span class="p-note">机ふきの とうばん：OFF＝月水金は弟・火木土は兄。ONで逆になります。トイレそうじは おにいちゃんの固定たんとうです。日曜は協力デー。</span></label>
       <button class="btn-ok" data-act="saveSettings">設定を保存</button>
     </div>
     <h3 class="grp">💸 おこづかい支払いの記録</h3>`;
