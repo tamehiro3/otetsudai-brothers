@@ -27,7 +27,7 @@ const MISSIONS = [
   { id: "fold_laundry",   group: "weekly", name: "せんたくものを たたむ",   emoji: "👕", pt: 30 },
   { id: "trash",          group: "weekly", name: "ゴミだしの じゅんび",     emoji: "🗑️", pt: 30 },
   { id: "desk_wipe",      group: "weekly", name: "つくえふき",             emoji: "🧽", pt: 20, rotation: true },
-  { id: "pet",            group: "weekly", name: "ペットの おせわ",         emoji: "🐶", pt: 30 },
+  { id: "pet",            group: "weekly", name: "しょくぶつの おせわ",     emoji: "🪴", pt: 30 },
   { id: "toilet",         group: "weekly", name: "トイレそうじ",           emoji: "🚽", pt: 50, assignee: "ani" },
   // ちょっとたいへん
   { id: "bath",           group: "hard", name: "おふろそうじ",               emoji: "🛁", pt: 70 },
