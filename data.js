@@ -28,7 +28,9 @@ const MISSIONS = [
   { id: "trash",          group: "weekly", name: "ゴミだしの じゅんび",     emoji: "🗑️", pt: 30 },
   { id: "desk_wipe",      group: "weekly", name: "つくえふき",             emoji: "🧽", pt: 20, rotation: true },
   { id: "pet",            group: "weekly", name: "しょくぶつの おせわ",     emoji: "🪴", pt: 30 },
+  { id: "room_clean",     group: "weekly", name: "じぶんの へやを きれいに する", emoji: "🧹", pt: 30 },
   { id: "toilet",         group: "weekly", name: "トイレそうじ",           emoji: "🚽", pt: 50, assignee: "ani" },
+  { id: "floor_wipe",     group: "weekly", name: "ゆかを ふく",            emoji: "🧼", pt: 30, assignee: "ani" },
   // ちょっとたいへん
   { id: "bath",           group: "hard", name: "おふろそうじ",               emoji: "🛁", pt: 70 },
   { id: "carry",          group: "hard", name: "かいものの にもつもち",       emoji: "🛍️", pt: 40 },
